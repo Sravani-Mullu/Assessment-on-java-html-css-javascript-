@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculator</title>
+	<script type="text/javascript">
+		let displayVal = "";
+		function adddisplay(value)
+		{
+			displayVal += value;
+			document.getElementById('display').value = displayVal;
+		}
+
+		function clearVal()
+		{
+			displayVal = "";
+			document.getElementById('display').value = "";
+		}
+
+		function result()
+		{
+			try
+			{
+				let result = eval(displayVal);
+				displayVal = result;
+				document.getElementById('display').value = result;
+			}
+			catch(error)
+			{
+				document.getElementsById('display').value= 'ERROR';
+			}
+
+		}
+	</script>
+	<style type="text/css">
+		body
+		{
+			background-color: #b8b9ba;
+		}
+		table
+		{
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5%;
+			border-collapse: collapse;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+		#display
+		{
+			width: 100%;
+			height: 90px;
+			padding: 5px;
+			border: none;
+			outline: none;
+			font-size: 20px;
+		}
+
+		button
+		{
+			border: none;
+			padding: 5px;
+			width: 100px;
+			height:100px;
+			font-size: 20px;
+			color: white;
+		}
+
+		.num
+		{
+			background-color: #353635;
+		}
+
+		.AC
+		{
+			background-color: #238c7e;
+		}
+
+		.Op
+		{
+			background-color: #6f7372;
+		}
+	</style>
+</head>
+<body>
+		<table>
+			<tr>
+				<td colspan="3">
+					<input type="text" name="display" id="display" readonly>
+				</td>
+				<td>
+					<button onclick="clearVal()" class="AC">AC</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="adddisplay('9')" class="num">9</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('8')" class="num">8</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('7')" class="num">7</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('+')" class="Op">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="adddisplay('4')" class="num">4</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('5')" class="num">5</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('6')" class="num">6</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('-')" class="Op">-</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="adddisplay('1')" class="num">1</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('2')" class="num">2</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('3')" class="num">3</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('/')" class="Op">/</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="adddisplay('.')" class="num">.</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('0')" class="num">0</button>
+				</td>
+				<td>
+					<button onclick="result()" class="num">=</button>
+				</td>
+				<td>
+					<button onclick="adddisplay('*')" class="Op">*</button>
+				</td>
+			</tr>
+		</table>
+</body>
+</html>
