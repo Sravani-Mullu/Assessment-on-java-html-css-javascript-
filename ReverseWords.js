@@ -19,5 +19,5 @@ function reverseWords(s){
 	return result;
 }
 
-const res = "This is a sunny day";
-console.log(res);
+const inp = "This is a sunny day";
+console.log(reverseWords(inp));
